@@ -16,6 +16,7 @@ job('Aplicacion Node.js DSL') {
         shell("npm install")
     }
     publishers {
+	"""
 	slackNotifier {
             notifyAborted(true)
             notifyEveryFailure(true)
@@ -33,5 +34,6 @@ job('Aplicacion Node.js DSL') {
             teamDomain(null)
             authToken(null)
         }
+	"""
     }
 }
